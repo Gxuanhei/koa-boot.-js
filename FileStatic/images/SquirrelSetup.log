@@ -1,0 +1,301 @@
+﻿2019-02-03 20:45:36> Program: Starting Squirrel Updater: --createShortcut=Postman.exe
+2019-02-03 20:45:36> ApplyReleasesImpl: About to create shortcuts for Postman.exe, rootAppDir C:\Users\ADMIN\AppData\Local\Postman
+2019-02-03 20:45:36> ApplyReleasesImpl: Creating shortcut for Postman.exe => C:\Users\ADMIN\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Postman\Postman.lnk
+2019-02-03 20:45:36> ApplyReleasesImpl: About to save shortcut: C:\Users\ADMIN\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Postman\Postman.lnk (target C:\Users\ADMIN\AppData\Local\Postman\Update.exe, workingDir C:\Users\ADMIN\AppData\Local\Postman\app-6.7.3, args --processStart "Postman.exe")
+2019-02-03 20:45:36> ApplyReleasesImpl: Creating shortcut for Postman.exe => C:\Users\ADMIN\Desktop\Postman.lnk
+2019-02-03 20:45:36> ApplyReleasesImpl: About to save shortcut: C:\Users\ADMIN\Desktop\Postman.lnk (target C:\Users\ADMIN\AppData\Local\Postman\Update.exe, workingDir C:\Users\ADMIN\AppData\Local\Postman\app-6.7.3, args --processStart "Postman.exe")
+2019-02-03 20:45:36> ApplyReleasesImpl: Examining Pin: 360安全浏览器.lnk
+2019-02-03 21:29:49> Program: Starting Squirrel Updater: --processStart Postman.exe
+2019-02-03 21:29:49> Program: Want to launch 'C:\Users\ADMIN\AppData\Local\Postman\app-6.7.3\Postman.exe'
+2019-02-03 21:29:49> Program: About to launch: 'C:\Users\ADMIN\AppData\Local\Postman\app-6.7.3\Postman.exe': 
+2019-02-11 17:45:05> Program: Starting Squirrel Updater: --processStart Postman.exe
+2019-02-11 17:45:05> Program: Want to launch 'C:\Users\ADMIN\AppData\Local\Postman\app-6.7.3\Postman.exe'
+2019-02-11 17:45:05> Program: About to launch: 'C:\Users\ADMIN\AppData\Local\Postman\app-6.7.3\Postman.exe': 
+2019-02-11 21:14:14> Program: Starting Squirrel Updater: --processStart Postman.exe
+2019-02-11 21:14:14> Program: Want to launch 'C:\Users\ADMIN\AppData\Local\Postman\app-6.7.3\Postman.exe'
+2019-02-11 21:14:14> Program: About to launch: 'C:\Users\ADMIN\AppData\Local\Postman\app-6.7.3\Postman.exe': 
+2019-02-11 21:15:29> Program: Starting Squirrel Updater: --processStart Postman.exe
+2019-02-11 21:15:29> Program: Want to launch 'C:\Users\ADMIN\AppData\Local\Postman\app-6.7.3\Postman.exe'
+2019-02-11 21:15:29> Program: About to launch: 'C:\Users\ADMIN\AppData\Local\Postman\app-6.7.3\Postman.exe': 
+2019-02-12 00:58:14> Program: Starting Squirrel Updater: --processStart Postman.exe
+2019-02-12 00:58:14> Program: Want to launch 'C:\Users\ADMIN\AppData\Local\Postman\app-6.7.3\Postman.exe'
+2019-02-12 00:58:14> Program: About to launch: 'C:\Users\ADMIN\AppData\Local\Postman\app-6.7.3\Postman.exe': 
+2019-02-12 14:19:16> Program: Starting Squirrel Updater: --processStart Postman.exe
+2019-02-12 14:19:16> Program: Want to launch 'C:\Users\ADMIN\AppData\Local\Postman\app-6.7.3\Postman.exe'
+2019-02-12 14:19:16> Program: About to launch: 'C:\Users\ADMIN\AppData\Local\Postman\app-6.7.3\Postman.exe': 
+2019-02-12 23:10:37> Program: Starting Squirrel Updater: --processStart Postman.exe
+2019-02-12 23:10:37> Program: Want to launch 'C:\Users\ADMIN\AppData\Local\Postman\app-6.7.3\Postman.exe'
+2019-02-12 23:10:37> Program: About to launch: 'C:\Users\ADMIN\AppData\Local\Postman\app-6.7.3\Postman.exe': 
+2019-02-13 15:09:03> Program: Starting Squirrel Updater: --processStart Postman.exe
+2019-02-13 15:09:03> Program: Want to launch 'C:\Users\ADMIN\AppData\Local\Postman\app-6.7.3\Postman.exe'
+2019-02-13 15:09:03> Program: About to launch: 'C:\Users\ADMIN\AppData\Local\Postman\app-6.7.3\Postman.exe': 
+2019-02-14 11:02:38> Program: Starting Squirrel Updater: --processStart Postman.exe
+2019-02-14 11:02:38> Program: Want to launch 'C:\Users\ADMIN\AppData\Local\Postman\app-6.7.3\Postman.exe'
+2019-02-14 11:02:38> Program: About to launch: 'C:\Users\ADMIN\AppData\Local\Postman\app-6.7.3\Postman.exe': 
+2019-02-15 20:40:44> Program: Starting Squirrel Updater: --processStart Postman.exe
+2019-02-15 20:40:45> Program: Want to launch 'C:\Users\ADMIN\AppData\Local\Postman\app-6.7.3\Postman.exe'
+2019-02-15 20:40:45> Program: About to launch: 'C:\Users\ADMIN\AppData\Local\Postman\app-6.7.3\Postman.exe': 
+2019-02-16 11:51:20> Program: Starting Squirrel Updater: --processStart Postman.exe
+2019-02-16 11:51:20> Program: Want to launch 'C:\Users\ADMIN\AppData\Local\Postman\app-6.7.3\Postman.exe'
+2019-02-16 11:51:20> Program: About to launch: 'C:\Users\ADMIN\AppData\Local\Postman\app-6.7.3\Postman.exe': 
+2019-02-16 22:47:12> Program: Starting Squirrel Updater: --processStart Postman.exe
+2019-02-16 22:47:12> Program: Want to launch 'C:\Users\ADMIN\AppData\Local\Postman\app-6.7.3\Postman.exe'
+2019-02-16 22:47:12> Program: About to launch: 'C:\Users\ADMIN\AppData\Local\Postman\app-6.7.3\Postman.exe': 
+2019-02-28 17:18:14> Program: Starting Squirrel Updater: --processStart Postman.exe
+2019-02-28 17:18:14> Program: Want to launch 'C:\Users\ADMIN\AppData\Local\Postman\app-6.7.3\Postman.exe'
+2019-02-28 17:18:14> Program: About to launch: 'C:\Users\ADMIN\AppData\Local\Postman\app-6.7.3\Postman.exe': 
+2019-02-28 17:19:02> Program: Starting Squirrel Updater: --checkForUpdate https://dl.pstmn.io/update/WIN64/6.7.3/stable?installationId=958183d7-7fa7-4a6d-90fe-a4d54acf0365&userId=0&syncEnabled=false&teamPlan=
+2019-02-28 17:19:02> Program: Fetching update information, downloading from https://dl.pstmn.io/update/WIN64/6.7.3/stable?installationId=958183d7-7fa7-4a6d-90fe-a4d54acf0365&userId=0&syncEnabled=false&teamPlan=
+2019-02-28 17:19:02> CheckForUpdateImpl: Generated new staging user ID: f79a9ff8-145b-556b-865e-e6214ada6a1e
+2019-02-28 17:19:02> CheckForUpdateImpl: Downloading RELEASES file from https://dl.pstmn.io/update/WIN64/6.7.3/stable?installationId=958183d7-7fa7-4a6d-90fe-a4d54acf0365&userId=0&syncEnabled=false&teamPlan=
+2019-02-28 17:19:02> FileDownloader: Downloading url: https://dl.pstmn.io/update/WIN64/6.7.3/stable/RELEASES?installationId=958183d7-7fa7-4a6d-90fe-a4d54acf0365&userId=0&syncEnabled=false&teamPlan=&id=Postman&localVersion=6.7.3&arch=amd64
+2019-02-28 17:19:04> UpdateInfo: Couldn't get release notes for:Postman-win64-6.7.4-delta.nupkg: System.IO.FileNotFoundException: 未能找到文件“C:\Users\ADMIN\AppData\Local\Postman\packages\Postman-win64-6.7.4-delta.nupkg”。
+文件名:“C:\Users\ADMIN\AppData\Local\Postman\packages\Postman-win64-6.7.4-delta.nupkg”
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   在 NuGet.ZipPackage.<>c__DisplayClass9_0.<.ctor>b__0()
+   在 NuGet.ZipPackage.EnsureManifest()
+   在 NuGet.ZipPackage..ctor(String filePath, Boolean enableCaching)
+   在 Squirrel.ReleaseEntry.GetReleaseNotes(String packageDirectory)
+   在 Squirrel.UpdateInfo.<FetchReleaseNotes>b__19_0(ReleaseEntry x)
+2019-02-28 17:19:04> Program: Starting Squirrel Updater: --update https://dl.pstmn.io/update/WIN64/6.7.3/stable?installationId=958183d7-7fa7-4a6d-90fe-a4d54acf0365&userId=0&syncEnabled=false&teamPlan=
+2019-02-28 17:19:04> Program: Starting update, downloading from https://dl.pstmn.io/update/WIN64/6.7.3/stable?installationId=958183d7-7fa7-4a6d-90fe-a4d54acf0365&userId=0&syncEnabled=false&teamPlan=
+2019-02-28 17:19:04> Program: About to update to: C:\Users\ADMIN\AppData\Local\Postman
+2019-02-28 17:19:04> CheckForUpdateImpl: Using existing staging user ID: f79a9ff8-145b-556b-865e-e6214ada6a1e
+2019-02-28 17:19:04> CheckForUpdateImpl: Downloading RELEASES file from https://dl.pstmn.io/update/WIN64/6.7.3/stable?installationId=958183d7-7fa7-4a6d-90fe-a4d54acf0365&userId=0&syncEnabled=false&teamPlan=
+2019-02-28 17:19:04> FileDownloader: Downloading url: https://dl.pstmn.io/update/WIN64/6.7.3/stable/RELEASES?installationId=958183d7-7fa7-4a6d-90fe-a4d54acf0365&userId=0&syncEnabled=false&teamPlan=&id=Postman&localVersion=6.7.3&arch=amd64
+2019-02-28 17:19:05> FileDownloader: Downloading file: https://dl.pstmn.io/download/6.7.4/Postman-win64-6.7.4-delta.nupkg
+2019-02-28 17:19:09> DeltaPackageBuilder: lib\net45\api-ms-win-core-console-l1-1-0.dll.diff exists unchanged, skipping
+2019-02-28 17:19:09> DeltaPackageBuilder: lib\net45\api-ms-win-core-datetime-l1-1-0.dll.diff exists unchanged, skipping
+2019-02-28 17:19:09> DeltaPackageBuilder: lib\net45\api-ms-win-core-debug-l1-1-0.dll.diff exists unchanged, skipping
+2019-02-28 17:19:09> DeltaPackageBuilder: lib\net45\api-ms-win-core-errorhandling-l1-1-0.dll.diff exists unchanged, skipping
+2019-02-28 17:19:09> DeltaPackageBuilder: lib\net45\api-ms-win-core-file-l1-1-0.dll.diff exists unchanged, skipping
+2019-02-28 17:19:09> DeltaPackageBuilder: lib\net45\api-ms-win-core-file-l1-2-0.dll.diff exists unchanged, skipping
+2019-02-28 17:19:09> DeltaPackageBuilder: lib\net45\api-ms-win-core-file-l2-1-0.dll.diff exists unchanged, skipping
+2019-02-28 17:19:09> DeltaPackageBuilder: lib\net45\api-ms-win-core-handle-l1-1-0.dll.diff exists unchanged, skipping
+2019-02-28 17:19:09> DeltaPackageBuilder: lib\net45\api-ms-win-core-heap-l1-1-0.dll.diff exists unchanged, skipping
+2019-02-28 17:19:09> DeltaPackageBuilder: lib\net45\api-ms-win-core-interlocked-l1-1-0.dll.diff exists unchanged, skipping
+2019-02-28 17:19:09> DeltaPackageBuilder: lib\net45\api-ms-win-core-libraryloader-l1-1-0.dll.diff exists unchanged, skipping
+2019-02-28 17:19:09> DeltaPackageBuilder: lib\net45\api-ms-win-core-localization-l1-2-0.dll.diff exists unchanged, skipping
+2019-02-28 17:19:09> DeltaPackageBuilder: lib\net45\api-ms-win-core-memory-l1-1-0.dll.diff exists unchanged, skipping
+2019-02-28 17:19:09> DeltaPackageBuilder: lib\net45\api-ms-win-core-namedpipe-l1-1-0.dll.diff exists unchanged, skipping
+2019-02-28 17:19:09> DeltaPackageBuilder: lib\net45\api-ms-win-core-processenvironment-l1-1-0.dll.diff exists unchanged, skipping
+2019-02-28 17:19:09> DeltaPackageBuilder: lib\net45\api-ms-win-core-processthreads-l1-1-0.dll.diff exists unchanged, skipping
+2019-02-28 17:19:09> DeltaPackageBuilder: lib\net45\api-ms-win-core-processthreads-l1-1-1.dll.diff exists unchanged, skipping
+2019-02-28 17:19:09> DeltaPackageBuilder: lib\net45\api-ms-win-core-profile-l1-1-0.dll.diff exists unchanged, skipping
+2019-02-28 17:19:09> DeltaPackageBuilder: lib\net45\api-ms-win-core-rtlsupport-l1-1-0.dll.diff exists unchanged, skipping
+2019-02-28 17:19:09> DeltaPackageBuilder: lib\net45\api-ms-win-core-string-l1-1-0.dll.diff exists unchanged, skipping
+2019-02-28 17:19:09> DeltaPackageBuilder: lib\net45\api-ms-win-core-synch-l1-1-0.dll.diff exists unchanged, skipping
+2019-02-28 17:19:09> DeltaPackageBuilder: lib\net45\api-ms-win-core-synch-l1-2-0.dll.diff exists unchanged, skipping
+2019-02-28 17:19:09> DeltaPackageBuilder: lib\net45\api-ms-win-core-sysinfo-l1-1-0.dll.diff exists unchanged, skipping
+2019-02-28 17:19:09> DeltaPackageBuilder: lib\net45\api-ms-win-core-timezone-l1-1-0.dll.diff exists unchanged, skipping
+2019-02-28 17:19:09> DeltaPackageBuilder: lib\net45\api-ms-win-core-util-l1-1-0.dll.diff exists unchanged, skipping
+2019-02-28 17:19:09> DeltaPackageBuilder: lib\net45\api-ms-win-crt-conio-l1-1-0.dll.diff exists unchanged, skipping
+2019-02-28 17:19:09> DeltaPackageBuilder: lib\net45\api-ms-win-crt-convert-l1-1-0.dll.diff exists unchanged, skipping
+2019-02-28 17:19:09> DeltaPackageBuilder: lib\net45\api-ms-win-crt-environment-l1-1-0.dll.diff exists unchanged, skipping
+2019-02-28 17:19:09> DeltaPackageBuilder: lib\net45\api-ms-win-crt-filesystem-l1-1-0.dll.diff exists unchanged, skipping
+2019-02-28 17:19:09> DeltaPackageBuilder: lib\net45\api-ms-win-crt-heap-l1-1-0.dll.diff exists unchanged, skipping
+2019-02-28 17:19:09> DeltaPackageBuilder: lib\net45\api-ms-win-crt-locale-l1-1-0.dll.diff exists unchanged, skipping
+2019-02-28 17:19:09> DeltaPackageBuilder: lib\net45\api-ms-win-crt-math-l1-1-0.dll.diff exists unchanged, skipping
+2019-02-28 17:19:09> DeltaPackageBuilder: lib\net45\api-ms-win-crt-multibyte-l1-1-0.dll.diff exists unchanged, skipping
+2019-02-28 17:19:09> DeltaPackageBuilder: lib\net45\api-ms-win-crt-private-l1-1-0.dll.diff exists unchanged, skipping
+2019-02-28 17:19:09> DeltaPackageBuilder: lib\net45\api-ms-win-crt-process-l1-1-0.dll.diff exists unchanged, skipping
+2019-02-28 17:19:09> DeltaPackageBuilder: lib\net45\api-ms-win-crt-runtime-l1-1-0.dll.diff exists unchanged, skipping
+2019-02-28 17:19:09> DeltaPackageBuilder: lib\net45\api-ms-win-crt-stdio-l1-1-0.dll.diff exists unchanged, skipping
+2019-02-28 17:19:09> DeltaPackageBuilder: lib\net45\api-ms-win-crt-string-l1-1-0.dll.diff exists unchanged, skipping
+2019-02-28 17:19:09> DeltaPackageBuilder: lib\net45\api-ms-win-crt-time-l1-1-0.dll.diff exists unchanged, skipping
+2019-02-28 17:19:09> DeltaPackageBuilder: lib\net45\api-ms-win-crt-utility-l1-1-0.dll.diff exists unchanged, skipping
+2019-02-28 17:19:09> DeltaPackageBuilder: lib\net45\blink_image_resources_200_percent.pak.diff exists unchanged, skipping
+2019-02-28 17:19:09> DeltaPackageBuilder: lib\net45\content_resources_200_percent.pak.diff exists unchanged, skipping
+2019-02-28 17:19:09> DeltaPackageBuilder: lib\net45\content_shell.pak.diff exists unchanged, skipping
+2019-02-28 17:19:09> DeltaPackageBuilder: lib\net45\d3dcompiler_47.dll.diff exists unchanged, skipping
+2019-02-28 17:19:09> DeltaPackageBuilder: lib\net45\ffmpeg.dll.diff exists unchanged, skipping
+2019-02-28 17:19:09> DeltaPackageBuilder: lib\net45\icudtl.dat.diff exists unchanged, skipping
+2019-02-28 17:19:09> DeltaPackageBuilder: lib\net45\libEGL.dll.diff exists unchanged, skipping
+2019-02-28 17:19:09> DeltaPackageBuilder: lib\net45\libGLESv2.dll.diff exists unchanged, skipping
+2019-02-28 17:19:09> DeltaPackageBuilder: lib\net45\LICENSE.diff exists unchanged, skipping
+2019-02-28 17:19:09> DeltaPackageBuilder: lib\net45\msvcp140.dll.diff exists unchanged, skipping
+2019-02-28 17:19:09> DeltaPackageBuilder: lib\net45\natives_blob.bin.diff exists unchanged, skipping
+2019-02-28 17:19:09> DeltaPackageBuilder: lib\net45\node.dll.diff exists unchanged, skipping
+2019-02-28 17:19:09> DeltaPackageBuilder: lib\net45\pdf_viewer_resources.pak.diff exists unchanged, skipping
+2019-02-28 17:19:09> DeltaPackageBuilder: Applying BSDiff to lib\net45\Postman.exe.bsdiff
+2019-02-28 17:19:10> DeltaPackageBuilder: lib\net45\snapshot_blob.bin.diff exists unchanged, skipping
+2019-02-28 17:19:10> DeltaPackageBuilder: Applying MSDiff to lib\net45\squirrel.exe.diff
+2019-02-28 17:19:10> DeltaPackageBuilder: lib\net45\ucrtbase.dll.diff exists unchanged, skipping
+2019-02-28 17:19:10> DeltaPackageBuilder: lib\net45\ui_resources_200_percent.pak.diff exists unchanged, skipping
+2019-02-28 17:19:10> DeltaPackageBuilder: lib\net45\vcruntime140.dll.diff exists unchanged, skipping
+2019-02-28 17:19:10> DeltaPackageBuilder: lib\net45\views_resources_200_percent.pak.diff exists unchanged, skipping
+2019-02-28 17:19:10> DeltaPackageBuilder: lib\net45\locales\am.pak.diff exists unchanged, skipping
+2019-02-28 17:19:10> DeltaPackageBuilder: lib\net45\locales\ar.pak.diff exists unchanged, skipping
+2019-02-28 17:19:10> DeltaPackageBuilder: lib\net45\locales\bg.pak.diff exists unchanged, skipping
+2019-02-28 17:19:10> DeltaPackageBuilder: lib\net45\locales\bn.pak.diff exists unchanged, skipping
+2019-02-28 17:19:10> DeltaPackageBuilder: lib\net45\locales\ca.pak.diff exists unchanged, skipping
+2019-02-28 17:19:10> DeltaPackageBuilder: lib\net45\locales\cs.pak.diff exists unchanged, skipping
+2019-02-28 17:19:10> DeltaPackageBuilder: lib\net45\locales\da.pak.diff exists unchanged, skipping
+2019-02-28 17:19:10> DeltaPackageBuilder: lib\net45\locales\de.pak.diff exists unchanged, skipping
+2019-02-28 17:19:10> DeltaPackageBuilder: lib\net45\locales\el.pak.diff exists unchanged, skipping
+2019-02-28 17:19:10> DeltaPackageBuilder: lib\net45\locales\en-GB.pak.diff exists unchanged, skipping
+2019-02-28 17:19:10> DeltaPackageBuilder: lib\net45\locales\en-US.pak.diff exists unchanged, skipping
+2019-02-28 17:19:10> DeltaPackageBuilder: lib\net45\locales\es-419.pak.diff exists unchanged, skipping
+2019-02-28 17:19:10> DeltaPackageBuilder: lib\net45\locales\es.pak.diff exists unchanged, skipping
+2019-02-28 17:19:10> DeltaPackageBuilder: lib\net45\locales\et.pak.diff exists unchanged, skipping
+2019-02-28 17:19:10> DeltaPackageBuilder: lib\net45\locales\fa.pak.diff exists unchanged, skipping
+2019-02-28 17:19:10> DeltaPackageBuilder: lib\net45\locales\fake-bidi.pak.diff exists unchanged, skipping
+2019-02-28 17:19:10> DeltaPackageBuilder: lib\net45\locales\fi.pak.diff exists unchanged, skipping
+2019-02-28 17:19:10> DeltaPackageBuilder: lib\net45\locales\fil.pak.diff exists unchanged, skipping
+2019-02-28 17:19:10> DeltaPackageBuilder: lib\net45\locales\fr.pak.diff exists unchanged, skipping
+2019-02-28 17:19:10> DeltaPackageBuilder: lib\net45\locales\gu.pak.diff exists unchanged, skipping
+2019-02-28 17:19:10> DeltaPackageBuilder: lib\net45\locales\he.pak.diff exists unchanged, skipping
+2019-02-28 17:19:10> DeltaPackageBuilder: lib\net45\locales\hi.pak.diff exists unchanged, skipping
+2019-02-28 17:19:10> DeltaPackageBuilder: lib\net45\locales\hr.pak.diff exists unchanged, skipping
+2019-02-28 17:19:10> DeltaPackageBuilder: lib\net45\locales\hu.pak.diff exists unchanged, skipping
+2019-02-28 17:19:10> DeltaPackageBuilder: lib\net45\locales\id.pak.diff exists unchanged, skipping
+2019-02-28 17:19:10> DeltaPackageBuilder: lib\net45\locales\it.pak.diff exists unchanged, skipping
+2019-02-28 17:19:10> DeltaPackageBuilder: lib\net45\locales\ja.pak.diff exists unchanged, skipping
+2019-02-28 17:19:10> DeltaPackageBuilder: lib\net45\locales\kn.pak.diff exists unchanged, skipping
+2019-02-28 17:19:10> DeltaPackageBuilder: lib\net45\locales\ko.pak.diff exists unchanged, skipping
+2019-02-28 17:19:10> DeltaPackageBuilder: lib\net45\locales\lt.pak.diff exists unchanged, skipping
+2019-02-28 17:19:10> DeltaPackageBuilder: lib\net45\locales\lv.pak.diff exists unchanged, skipping
+2019-02-28 17:19:10> DeltaPackageBuilder: lib\net45\locales\ml.pak.diff exists unchanged, skipping
+2019-02-28 17:19:10> DeltaPackageBuilder: lib\net45\locales\mr.pak.diff exists unchanged, skipping
+2019-02-28 17:19:10> DeltaPackageBuilder: lib\net45\locales\ms.pak.diff exists unchanged, skipping
+2019-02-28 17:19:10> DeltaPackageBuilder: lib\net45\locales\nb.pak.diff exists unchanged, skipping
+2019-02-28 17:19:10> DeltaPackageBuilder: lib\net45\locales\nl.pak.diff exists unchanged, skipping
+2019-02-28 17:19:10> DeltaPackageBuilder: lib\net45\locales\pl.pak.diff exists unchanged, skipping
+2019-02-28 17:19:10> DeltaPackageBuilder: lib\net45\locales\pt-BR.pak.diff exists unchanged, skipping
+2019-02-28 17:19:10> DeltaPackageBuilder: lib\net45\locales\pt-PT.pak.diff exists unchanged, skipping
+2019-02-28 17:19:10> DeltaPackageBuilder: lib\net45\locales\ro.pak.diff exists unchanged, skipping
+2019-02-28 17:19:10> DeltaPackageBuilder: lib\net45\locales\ru.pak.diff exists unchanged, skipping
+2019-02-28 17:19:10> DeltaPackageBuilder: lib\net45\locales\sk.pak.diff exists unchanged, skipping
+2019-02-28 17:19:10> DeltaPackageBuilder: lib\net45\locales\sl.pak.diff exists unchanged, skipping
+2019-02-28 17:19:10> DeltaPackageBuilder: lib\net45\locales\sr.pak.diff exists unchanged, skipping
+2019-02-28 17:19:10> DeltaPackageBuilder: lib\net45\locales\sv.pak.diff exists unchanged, skipping
+2019-02-28 17:19:10> DeltaPackageBuilder: lib\net45\locales\sw.pak.diff exists unchanged, skipping
+2019-02-28 17:19:10> DeltaPackageBuilder: lib\net45\locales\ta.pak.diff exists unchanged, skipping
+2019-02-28 17:19:10> DeltaPackageBuilder: lib\net45\locales\te.pak.diff exists unchanged, skipping
+2019-02-28 17:19:10> DeltaPackageBuilder: lib\net45\locales\th.pak.diff exists unchanged, skipping
+2019-02-28 17:19:10> DeltaPackageBuilder: lib\net45\locales\tr.pak.diff exists unchanged, skipping
+2019-02-28 17:19:10> DeltaPackageBuilder: lib\net45\locales\uk.pak.diff exists unchanged, skipping
+2019-02-28 17:19:10> DeltaPackageBuilder: lib\net45\locales\vi.pak.diff exists unchanged, skipping
+2019-02-28 17:19:10> DeltaPackageBuilder: lib\net45\locales\zh-CN.pak.diff exists unchanged, skipping
+2019-02-28 17:19:10> DeltaPackageBuilder: lib\net45\locales\zh-TW.pak.diff exists unchanged, skipping
+2019-02-28 17:19:10> DeltaPackageBuilder: Applying BSDiff to lib\net45\resources\app.asar.bsdiff
+2019-02-28 17:19:12> DeltaPackageBuilder: lib\net45\resources\electron.asar.diff exists unchanged, skipping
+2019-02-28 17:19:12> DeltaPackageBuilder: Updating metadata file: Postman.nuspec
+2019-02-28 17:19:12> DeltaPackageBuilder: Updating metadata file: [Content_Types].xml
+2019-02-28 17:19:12> DeltaPackageBuilder: Updating metadata file: package\services\metadata\core-properties\ad9e86089dc94d7c90e1b8e1cc70a5cd.psmdcp
+2019-02-28 17:19:12> DeltaPackageBuilder: Updating metadata file: _rels\.rels
+2019-02-28 17:19:12> DeltaPackageBuilder: Repacking into full package: C:\Users\ADMIN\AppData\Local\Postman\packages\Postman-win64-6.7.4.nupkg
+2019-02-28 17:19:24> ApplyReleasesImpl: Writing files to app directory: C:\Users\ADMIN\AppData\Local\Postman\app-6.7.4
+2019-02-28 17:19:26> ApplyReleasesImpl: Squirrel Enabled Apps: [C:\Users\ADMIN\AppData\Local\Postman\app-6.7.4\Postman.exe]
+2019-02-28 17:19:42> ApplyReleasesImpl: Couldn't run Squirrel hook, continuing: C:\Users\ADMIN\AppData\Local\Postman\app-6.7.4\Postman.exe: System.OperationCanceledException: 已取消该操作。
+   在 System.Threading.CancellationToken.ThrowOperationCanceledException()
+   在 Squirrel.Utility.<>c__DisplayClass11_0.<InvokeProcessAsync>b__0()
+   在 System.Threading.Tasks.Task.InnerInvoke()
+   在 System.Threading.Tasks.Task.Execute()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 Squirrel.Utility.<InvokeProcessAsync>d__11.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 Squirrel.UpdateManager.ApplyReleasesImpl.<>c__DisplayClass10_0.<<invokePostInstall>b__0>d.MoveNext()
+2019-02-28 17:19:42> ApplyReleasesImpl: Starting fixPinnedExecutables
+2019-02-28 17:19:42> ApplyReleasesImpl: Examining Pin: 360安全浏览器.lnk
+2019-02-28 17:19:42> ApplyReleasesImpl: Examining Pin: File Explorer.lnk
+2019-02-28 17:19:42> ApplyReleasesImpl: Fixing up tray icons
+2019-02-28 17:19:42> ApplyReleasesImpl: cleanDeadVersions: for version 6.7.4
+2019-02-28 17:19:42> ApplyReleasesImpl: cleanDeadVersions: exclude folder app-6.7.3
+2019-02-28 17:19:42> ApplyReleasesImpl: cleanDeadVersions: exclude folder app-6.7.4
+2019-02-28 17:19:43> InstallHelperImpl: Couldn't write uninstall icon, don't care: System.Net.WebException: 未能找到路径“C:\Users\Administrator\buildkite-agent\builds\win-build\postman\app-package-and-deploy\resources\postman-prod.ico”的一部分。 ---> System.Net.WebException: 未能找到路径“C:\Users\Administrator\buildkite-agent\builds\win-build\postman\app-package-and-deploy\resources\postman-prod.ico”的一部分。 ---> System.IO.DirectoryNotFoundException: 未能找到路径“C:\Users\Administrator\buildkite-agent\builds\win-build\postman\app-package-and-deploy\resources\postman-prod.ico”的一部分。
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy)
+   在 System.Net.FileWebStream..ctor(FileWebRequest request, String path, FileMode mode, FileAccess access, FileShare sharing, Int32 length, Boolean async)
+   在 System.Net.FileWebResponse..ctor(FileWebRequest request, Uri uri, FileAccess access, Boolean asyncHint)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.FileWebResponse..ctor(FileWebRequest request, Uri uri, FileAccess access, Boolean asyncHint)
+   在 System.Net.FileWebRequest.GetResponseCallback(Object state)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.FileWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   在 System.Net.WebClient.GetWebResponse(WebRequest request, IAsyncResult result)
+   在 System.Net.WebClient.DownloadBitsResponseCallback(IAsyncResult result)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   在 Squirrel.UpdateManager.InstallHelperImpl.<CreateUninstallerRegistryEntry>d__5.MoveNext()
+2019-03-09 17:19:31> Program: Starting Squirrel Updater: --processStart Postman.exe
+2019-03-09 17:19:31> Program: Want to launch 'C:\Users\ADMIN\AppData\Local\Postman\app-6.7.4\Postman.exe'
+2019-03-09 17:19:31> Program: About to launch: 'C:\Users\ADMIN\AppData\Local\Postman\app-6.7.4\Postman.exe': 
+2019-03-21 20:56:13> Program: Starting Squirrel Updater: --processStart Postman.exe
+2019-03-21 20:56:13> Program: Want to launch 'C:\Users\ADMIN\AppData\Local\Postman\app-6.7.4\Postman.exe'
+2019-03-21 20:56:13> Program: About to launch: 'C:\Users\ADMIN\AppData\Local\Postman\app-6.7.4\Postman.exe': 
+2019-03-21 21:10:30> Program: Starting Squirrel Updater: --processStart Postman.exe
+2019-03-21 21:10:30> Program: Want to launch 'C:\Users\ADMIN\AppData\Local\Postman\app-6.7.4\Postman.exe'
+2019-03-21 21:10:30> Program: About to launch: 'C:\Users\ADMIN\AppData\Local\Postman\app-6.7.4\Postman.exe': 
+2019-03-22 17:13:09> Program: Starting Squirrel Updater: --processStart Postman.exe
+2019-03-22 17:13:09> Program: Want to launch 'C:\Users\ADMIN\AppData\Local\Postman\app-6.7.4\Postman.exe'
+2019-03-22 17:13:09> Program: About to launch: 'C:\Users\ADMIN\AppData\Local\Postman\app-6.7.4\Postman.exe': 
+2019-03-28 22:08:16> Program: Starting Squirrel Updater: --processStart Postman.exe
+2019-03-28 22:08:16> Program: Want to launch 'C:\Users\ADMIN\AppData\Local\Postman\app-6.7.4\Postman.exe'
+2019-03-28 22:08:16> Program: About to launch: 'C:\Users\ADMIN\AppData\Local\Postman\app-6.7.4\Postman.exe': 
+2019-04-28 03:42:45> Program: Starting Squirrel Updater: --processStart Postman.exe
+2019-04-28 03:42:46> Program: Want to launch 'C:\Users\ADMIN\AppData\Local\Postman\app-6.7.4\Postman.exe'
+2019-04-28 03:42:46> Program: About to launch: 'C:\Users\ADMIN\AppData\Local\Postman\app-6.7.4\Postman.exe': 
+2019-05-10 23:49:05> Program: Starting Squirrel Updater: --processStart Postman.exe
+2019-05-10 23:49:05> Program: Want to launch 'C:\Users\ADMIN\AppData\Local\Postman\app-6.7.4\Postman.exe'
+2019-05-10 23:49:05> Program: About to launch: 'C:\Users\ADMIN\AppData\Local\Postman\app-6.7.4\Postman.exe': 
+2019-05-16 20:57:54> Program: Starting Squirrel Updater: --processStart Postman.exe C:\Users\ADMIN\Downloads\admin2.pem
+2019-05-16 20:57:54> Program: Want to launch 'C:\Users\ADMIN\AppData\Local\Postman\app-6.7.4\Postman.exe'
+2019-05-16 20:57:54> Program: About to launch: 'C:\Users\ADMIN\AppData\Local\Postman\app-6.7.4\Postman.exe': 
+2019-08-02 20:12:18> Program: Starting Squirrel Updater: --processStart Postman.exe
+2019-08-02 20:12:18> Program: Want to launch 'C:\Users\ADMIN\AppData\Local\Postman\app-6.7.4\Postman.exe'
+2019-08-02 20:12:18> Program: About to launch: 'C:\Users\ADMIN\AppData\Local\Postman\app-6.7.4\Postman.exe': 
+2019-08-05 04:13:47> Program: Starting Squirrel Updater: --processStart Postman.exe
+2019-08-05 04:13:47> Program: Want to launch 'C:\Users\ADMIN\AppData\Local\Postman\app-6.7.4\Postman.exe'
+2019-08-05 04:13:47> Program: About to launch: 'C:\Users\ADMIN\AppData\Local\Postman\app-6.7.4\Postman.exe': 
+2019-08-05 04:15:08> Program: Starting Squirrel Updater: --processStart Postman.exe
+2019-08-05 04:15:08> Program: Want to launch 'C:\Users\ADMIN\AppData\Local\Postman\app-6.7.4\Postman.exe'
+2019-08-05 04:15:08> Program: About to launch: 'C:\Users\ADMIN\AppData\Local\Postman\app-6.7.4\Postman.exe': 
+2019-08-05 04:16:03> Program: Starting Squirrel Updater: --processStart Postman.exe
+2019-08-05 04:16:03> Program: Want to launch 'C:\Users\ADMIN\AppData\Local\Postman\app-6.7.4\Postman.exe'
+2019-08-05 04:16:03> Program: About to launch: 'C:\Users\ADMIN\AppData\Local\Postman\app-6.7.4\Postman.exe': 
+2019-08-07 15:30:19> Program: Starting Squirrel Updater: --processStart Postman.exe
+2019-08-07 15:30:19> Program: Want to launch 'C:\Users\ADMIN\AppData\Local\Postman\app-6.7.4\Postman.exe'
+2019-08-07 15:30:19> Program: About to launch: 'C:\Users\ADMIN\AppData\Local\Postman\app-6.7.4\Postman.exe': 
+2019-08-09 11:33:59> Program: Starting Squirrel Updater: --processStart Postman.exe
+2019-08-09 11:33:59> Program: Want to launch 'C:\Users\ADMIN\AppData\Local\Postman\app-6.7.4\Postman.exe'
+2019-08-09 11:33:59> Program: About to launch: 'C:\Users\ADMIN\AppData\Local\Postman\app-6.7.4\Postman.exe': 
+2019-08-09 16:35:12> Program: Starting Squirrel Updater: --processStart Postman.exe
+2019-08-09 16:35:12> Program: Want to launch 'C:\Users\ADMIN\AppData\Local\Postman\app-6.7.4\Postman.exe'
+2019-08-09 16:35:12> Program: About to launch: 'C:\Users\ADMIN\AppData\Local\Postman\app-6.7.4\Postman.exe': 
+2019-08-18 18:25:33> Program: Starting Squirrel Updater: --processStart Postman.exe
+2019-08-18 18:25:33> Program: Want to launch 'C:\Users\ADMIN\AppData\Local\Postman\app-6.7.4\Postman.exe'
+2019-08-18 18:25:33> Program: About to launch: 'C:\Users\ADMIN\AppData\Local\Postman\app-6.7.4\Postman.exe': 
+2020-05-20 17:41:02> Program: Starting Squirrel Updater: --processStart Postman.exe
+2020-05-20 17:41:03> Program: Want to launch 'C:\Users\ADMIN\AppData\Local\Postman\app-6.7.4\Postman.exe'
+2020-05-20 17:41:03> Program: About to launch: 'C:\Users\ADMIN\AppData\Local\Postman\app-6.7.4\Postman.exe': 
+2020-05-22 13:05:33> Program: Starting Squirrel Updater: --processStart Postman.exe
+2020-05-22 13:05:33> Program: Want to launch 'C:\Users\ADMIN\AppData\Local\Postman\app-6.7.4\Postman.exe'
+2020-05-22 13:05:33> Program: About to launch: 'C:\Users\ADMIN\AppData\Local\Postman\app-6.7.4\Postman.exe': 
+2020-05-22 14:31:18> Program: Starting Squirrel Updater: --processStart Postman.exe
+2020-05-22 14:31:18> Program: Want to launch 'C:\Users\ADMIN\AppData\Local\Postman\app-6.7.4\Postman.exe'
+2020-05-22 14:31:18> Program: About to launch: 'C:\Users\ADMIN\AppData\Local\Postman\app-6.7.4\Postman.exe': 
+2020-06-03 22:06:49> Program: Starting Squirrel Updater: --processStart Postman.exe
+2020-06-03 22:06:49> Program: Want to launch 'C:\Users\ADMIN\AppData\Local\Postman\app-6.7.4\Postman.exe'
+2020-06-03 22:06:49> Program: About to launch: 'C:\Users\ADMIN\AppData\Local\Postman\app-6.7.4\Postman.exe': 
+2020-06-13 05:49:24> Program: Starting Squirrel Updater: --processStart Postman.exe
+2020-06-13 05:49:24> Program: Want to launch 'C:\Users\ADMIN\AppData\Local\Postman\app-6.7.4\Postman.exe'
+2020-06-13 05:49:24> Program: About to launch: 'C:\Users\ADMIN\AppData\Local\Postman\app-6.7.4\Postman.exe': 
+2020-06-14 18:37:52> Program: Starting Squirrel Updater: --processStart Postman.exe
+2020-06-14 18:37:52> Program: Want to launch 'C:\Users\ADMIN\AppData\Local\Postman\app-6.7.4\Postman.exe'
+2020-06-14 18:37:52> Program: About to launch: 'C:\Users\ADMIN\AppData\Local\Postman\app-6.7.4\Postman.exe': 
+2020-06-16 00:24:24> Program: Starting Squirrel Updater: --processStart Postman.exe
+2020-06-16 00:24:24> Program: Want to launch 'C:\Users\ADMIN\AppData\Local\Postman\app-6.7.4\Postman.exe'
+2020-06-16 00:24:24> Program: About to launch: 'C:\Users\ADMIN\AppData\Local\Postman\app-6.7.4\Postman.exe': 
+2020-09-08 23:40:40> Program: Starting Squirrel Updater: --processStart Postman.exe
+2020-09-08 23:40:41> Program: Want to launch 'C:\Users\ADMIN\AppData\Local\Postman\app-6.7.4\Postman.exe'
+2020-09-08 23:40:41> Program: About to launch: 'C:\Users\ADMIN\AppData\Local\Postman\app-6.7.4\Postman.exe': 
