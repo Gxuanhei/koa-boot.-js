@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./docs/KoaBootLogo.png" width=200px height=200px/>
+  <img src="./docs/KoaBootLogo.png" width=300px height=300px/>
    <h1 align="center">Enlace</h1>
    <h2 align="center">基于Deno和Typescript处理连接的服务端框架</h2>
    <h5 align="center">⚠️Enlace正在开发中</h5>
