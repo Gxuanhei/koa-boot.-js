@@ -113,270 +113,388 @@ class IndexController{
 run
 
 ```bash
-git clone https://github.com/2pown/enlace
-cd enlace
-deno run -c ./tsconfig.json --allow-net --allow-read ./demo/simple.ts
+git clone https://gitee.com/JSshuai2015/koa-boot.-js
+cd koa-boot.-js
+npm run dev
 ```
 
 # 组成部分
 
-- [EnlaceEnvrionment](#EnlaceEnvrionment): Enlace app 的运行环境，无需用户的配置和参与
-- [Application](#Application): 承载了 Server 对象和依赖注入的 Injector 对象，是 enlace app 的核心
-- [Server](#Server): 对请求进行处理的, 分配给某个 Adaptor 或者 Server 上的 Router 对象
-- [Router](#Router): 完成对 Endpoint 与 Middleware 的调度
-- [Adaptor](#Adaptor): 用于支持具体通信协议的适配器，Enlace 内置了 Http 与 WebSocket 的适配器
-- [Middleware](#Middleware): 对请求进行过滤与加工，与 Endpoint 之前运行
-- [Endpoint](#Endpoint): 外部请求进入 Enlace app 后的处理点
-- Client: 用于唯一地标记每一次请求，由 Enlace 和 Adaptor 维护。
-- EndpointInput: 统一的 Endpoint 输入。
+- [Annotation](#Annotation): 注解修饰层，用于装配一些本项目需要预先封装好用以复用的事情
+- [Config](#Config): 配置文件，存放文件上传路径以及 mysql 连接配置
+- [Controller](#Controller): 控制器层，相应用户请求：决定使用什么视图，需要准备什么数据来显示
+- [Server](#Server): 存放业务逻辑处理，也是一些关于数据库处理的操作，但不是直接和数据库打交道，他需要导入 Mapper 层，Mapper 层是直接对数据库打交道的，Server 主打数据输入和输出过程的处理
+- [Mapper](#Mapper): Mapper 层，完成对数据库的 curd，并返回处理结果
+- [Pojo](#Pojo): 实体层，暂未实现
+- [Utils](#Utils): 封装的一些常用工具插件
+- [KoaBootApplication.js](#KoaBootApplication): 启动入口
+- 其他...: 等我后面更新吧。
 
-# Envrionment
+# Annotation:
 
-EnlaceEnvrionment 包含一个 Application，并根据 Application 里的配置来运行 Enlace app，以及自动地调用 Applicaiton 里定义的回调函数。(详见 [Application](#Application))
+注解修饰层，用于装配一些本项目需要预先封装好用以复用的事情
 
-# Application:
+# Config
 
-Application 可以简单地任务是您对自己 app 的描述，其中里面包含了应用准备就绪后要做的事情，应用如何配置等的信息，而不承担开始监听端口，处理请求等的工作。
+配置文件，存放文件上传路径以及 mysql 连接配置
 
-只需要定义继承自 Application 类，然后加上 @MainApplication 的注解，在运行该类所在的 ts 文件后后 EnlaceEnvrionment 就会自动调用。
-
-### 应用启动的回调函数 `onStartUp`
-
-当 enlace 完成准备工作可以正常接受请求的时候调用，示例代码:
+### Example
 
 ```typescript
-@MainApplication
-class DemoApplication extends Application {
-  onStartUp() {
-    console.log("startup!!")
+/**
+ * Greated By xuanhei on 2020/9/5
+ **/
+// 数据库配置
+const config = {
+  port: 3000, // koa运行端口
+  database: {
+    host: "127.0.0.1",
+    user: "root",
+    password: "root",
+    database: "koadb", // 数据库名
+  },
+};
+
+module.exports = config;
+```
+
+# Controller
+
+### 控制器
+
+控制器层，相应用户请求：决定使用什么视图，需要准备什么数据来显示，示例代码:
+
+```typescript
+const {
+  Api,
+  Controller,
+  PostMapping,
+  GetMapping,
+  DeleteMapping,
+  PutMapping,
+  FilePostMapping,
+} = require("../Annotation/HttpAnnotion");
+const IndexService = require("../Service/IndexService");
+const { Init, Autowired } = require("../Annotation/InitAnnontion");
+const ResultCode = require("../Utils/ResultCode");
+/**
+ * 首页api
+ */
+@Api("/Article")
+@Controller
+@Init //增加这个注解给方法修改
+class IndexController {
+  //自动实例化
+  @Autowired(IndexService)
+  indexService;
+  /**
+   *  增加文章
+   */
+  @PostMapping("/addArticle")
+  addArticle(data, next) {
+    return this.indexService.addTest(data);
   }
-  ...
-}
-```
 
-### 用于配置 enlace 的回调函数 `configure`
+  /**
+   *  删除文章
+   */
+  @DeleteMapping("/deleteArticle")
+  deleteArticle(data) {
+    return ResultCode.SUCCESS({
+      data: this.indexService.deleteTest(data),
+    });
+  }
 
-在 `onStartUp` 之前调用，用于配置路由、中间件、依赖注入等，示例代码(省略了 DemoApplication 类的定义):
+  @PutMapping("/updateArticle")
+  updateArticle(data, next) {
+    return ResultCode.SUCCESS({
+      data: this.indexService.updateArticle(data),
+      message: "删除成功",
+    });
+  }
 
-```typescript
-configure(injector: Injector, server: EnlaceServer) {
-  // 注入依赖
-  injector.register(SomeClass);
-  // 添加 HttpAdaptor 以支持对 Http 连接的处理
-  server.addAdaptorWithConfigure(new HttpAdaptor(), { host: 'localhost', port: 20203 })
-  // 对来自所有 adaptor 的所有路径的请求注册中间件
-  server.router.useMiddlewareOn("*", (input, next) => {
-    console.log("middleware");
-    next();
-  })
-}
-```
+  /**
+   *  查询单篇文章
+   */
+  @GetMapping("/selectOneTest")
+  selectOneTest(data, next) {
+    return ResultCode.SUCCESS({
+      data: this.indexService.selectOneTest(data),
+    });
+  }
 
-### 便利地添加 adaptor 的注解 `@AddAdaptor`
+  /**
+   *  查询多篇文章
+   */
+  @GetMapping("/selectArticle")
+  selectArticle({ aa = "", bb = "" }, next) {
+    return ResultCode.SUCCESS({
+      data: this.indexService.selectTest(),
+    });
+  }
 
-在 configure 回调里配置 adaptor 十分繁琐，而且添加不同的 adaptor 的操作极为通用，因此您可以方便地使用 @AddAdaptor 注解来完成该任务。
-
-其中第一个参数为要添加的 adaptor 的构造器，即使该构造器有依赖（enlace 内置的依赖注入管理器会为你完成一切依赖的处理）；第二个参数为 adaptor 的配置（可选的，host 与 port）。
-
-该注解标注的方法会在需要的 adaptor 添加成功后调用，因此您可以在该方法里进行路由的配置。
-
-示例代码(省略了 DemoApplication 类的定义):
-
-```typescript
-@AddAdaptor(HttpAdaptor)
-onAddHttpAdaptor(router: Router) {
-  router.useEndpointOn('/', () => 'HelloWorld');
+  /**
+   *  上传文件
+   */
+  @FilePostMapping("/upFile")
+  upFile(ctx, next) {
+    return this.indexService.upFile(ctx, next);
+  }
 }
 ```
 
 # Server
 
-Server 记录了所有已经注册的 Adaptor 以及它们的配置信息。
+### 服务层
 
-当 Enlace app 启动时，Server 的 start 函数会被 EnlaceEnvrionment 自动调用，然后 Server 会调用每个注册了的 adaptor 上的 attachOnServer 函数以开始各个 adaptor 上的自定义的对端口监听等等行为。当收到来自 adaptor 的请求，Server 会将该请求分配到自己的 Rouer 或者对应 adaptor 的 Router 对象上。
-
-> Server 会优先将请求与自己的 Router 对象相匹配，如果有匹配成功的，将不会调用在 adaptor 的 router 上注册的 Middleware 和 Endpoint
-
-# Router
-
-Router 记录了所有已经注册的 Endpoint 与 Middleware 以及它们各自的配置信息。Server 持有一个 Router 对象，每个 Adaptor 持有一个 Router 对象。
-
-> 在 server 上的 router 注册的 Endpoint 没有明确划分使用哪个 Adaptor，因此您可以通过设置 EndpointConfig 中的 selectAdaptor 来动态确定需要该 Endpoint 接收来自哪个 adaptor 的数据。
-
-当接收到来自 Server 的请求后，Router 会找出该请求符合要求的 Middleware 和 Endpoint，其中 Middleware 可以有多个，但 Endpoint 只有一个，然后对 Middleware 进行调用，接下来是 Endpoint。
-
-Router 对象不需要用户手动创建，您只需要在你想要的 adaptor 上的 router 对象上注册您的 Middlewear 或者是 Endpoint。
-
-# Adaptor
-
-Adaptor 并不需要用户编写，而是由具体协议的实现者与 Enlace 的作者编写。目前 Enlace 里内置了 Http 和 WebSocket 的 Adaptor。
-
-每个 Adaptor 都需要实现 Adaptor 抽象类，该抽象类定义如下：
+存放业务逻辑处理，也是一些关于数据库处理的操作，但不是直接和数据库打交道，他需要导入 Mapper 层，Mapper 层是直接对数据库打交道的，Server 主打数据输入和输出过程的处理
 
 ```typescript
-export abstract class Adaptor {
-  // 每个 adaptor 需要手动维护每个连接与连接是的输入的关系，当某个连接不再有效时需要删除
-  clientToInput: Map<Client, GenericEndpointInput> = new Map();
+/**
+ * Greated By xuanhei on 2020/9/6
+ **/
 
-  // 定义该通信协议的初始化工作，比如对于 Http 来说就是监听端口
-  attachOnServer(server: EnlaceServer, configure: AdaptorConfigure): void;
+const IndexMapper = require("../Mapper/IndexMapper");
+const ResultCode = require("../Utils/ResultCode");
+const { Init, Autowired } = require("../Annotation/InitAnnontion");
+const { Service } = require("../Annotation/ServiceAnnontion");
+const uploadimg = require("../Utils/FileUtil");
+const { autobind } = require("core-decorators");
+@Service
+// @Init //增加这个注解给方法修改
+class IndexService {
+  // @Autowired("../Mapper/IndexMapper")
+  indexMapper = new IndexMapper();
 
-  // 定义如何将信息发送给客户端，可以在此处合理利用 clientToInput
-  abstract sendToClient(client: Client, content: unknown): void;
+  addTest(data) {
+    const that = this;
+    return async function () {
+      let SQLDATA = {};
+      try {
+        SQLDATA = await that.indexMapper.addTest(data);
+      } catch (e) {
+        console.log(e);
+      }
+      if (SQLDATA && SQLDATA === 1) {
+        return ResultCode.SUCCESS({
+          message: "插入成功",
+        });
+      }
+      return ResultCode.SUCCESS({
+        message: "插入失败",
+      });
+    };
+  }
+  deleteTest(id) {
+    const that = this;
+    return async function () {
+      let SQLDATA = {};
+      try {
+        SQLDATA = await that.indexMapper.deleteTest(id);
+      } catch (e) {
+        console.log(e);
+      }
+      if (SQLDATA && SQLDATA === 1) {
+        return ResultCode.SUCCESS({
+          message: "删除成功",
+        });
+      }
+      return ResultCode.SUCCESS({
+        message: "删除失败",
+      });
+    };
+  }
+  updateArticle(data) {
+    const that = this;
+    return async function () {
+      let SQLDATA = {};
+      try {
+        SQLDATA = await that.indexMapper.updateTest(data);
+      } catch (e) {
+        console.log(e);
+      }
+      if (SQLDATA && SQLDATA === 1) {
+        return ResultCode.SUCCESS({
+          message: "删除成功",
+        });
+      }
+      return ResultCode.SUCCESS({
+        message: "删除失败",
+      });
+    };
+  }
 
-  // 该字段的值由 Server 提供，只需要在收到请求后调用该函数，Server 就可以收到
-  didReceiveContent: (
-    input: GenericEndpointInput,
-    client: Client
-  ) => void = () => {};
-}
-```
+  /**
+   *  查询单条数据
+   */
+  selectOneTest(id) {
+    return this.indexMapper.selectOneTest(id);
+  }
 
-### Adaptor 的使用
+  /**
+   *  查询多条数据
+   */
+  selectTest() {
+    return this.indexMapper.selectTest();
+  }
 
-您需要将您想在您的 app 中使用的通信协议告诉 Enlace，方法就是在在 Application 类中将具体的 Adaptor 实例注册到 Server 上(参见 [Application](#Application)):
-
-```typescript
-configure(injector: Injector, server: EnlaceServer) {
-  // 添加 HttpAdaptor 以支持对 Http 连接的处理
-  server.addAdaptorWithConfigure(new HttpAdaptor(), { host: 'localhost', port: 20203 })
-}
-// 或者
-@AddAdaptor(HttpAdaptor, { host: 'localhost', port: 20203 })
-onAddHttpAdaptor(router: Router) {
-  // ......
-}
-```
-
-# Middleware
-
-对于 Middleware，没有什么特别的，有亮点需要注意的就是:
-
-- 理论上 Middleware 执行的顺序应该是注册 Middleware 的顺序，但 Server 并不刻意维护 Middleware 的顺序，因此在编写 Middleware 时不应该假设自己的运行顺序(详情参见定义和扩展中间件指南)
-- Middleware 于 Endpoint 之前运行
-
-Middleware 的原型如下(被定义成只能用作函数形式是因为我们希望每个 Mddleware 足够简单，毕竟处理请求的主角是 Endpoint):
-
-```typescript
-type MiddleWare = (
-  input: GenericEndpointInput,
-  next: Function
-) => void | Promise<void>;
-```
-
-### Middleware 的使用
-
-于 Endpoint 的使用基本相同，示例如下:
-
-```typescript
-// 类定义，使用构造器
-adaptor.router.useMiddlewareOn("/", MiddleWare);
-```
-
-# Endpoint
-
-Endpoint 是一个具体处理外来请求的对象，原则上每个 Endpoint 定义
-
-- 想要处理的请求是来自哪个 adaptor
-- 请求 path 遵循的规则
-
-然后 Server 会根据 adaptor 传入的请求数据对 Endpoint 进行调用。
-
-值得注意的是，每个请求到最后只会有一个 Endpoint 处理。
-
-> 具体通信协议的 adaptor、 endpoint 的接口以及 EndpointInput 中的内容均由具体通信协议的实现者提供，详情参见定义和扩展通信协议指南
-
-### Endpoint 的抽象
-
-由于 Enlace 的目标是处理通信而不是简单地处理 Http，因此合理地对处理请求的 Endpoint 对象进行抽象就显得至关重要，Enlace 需要赋予 Endpoint 处理各种通信的能力。
-
-以两个比较常见的网络协议为例子:
-
-1. **Http**: 这是一个 `半双工` 的网络协议，只需要处理外来请求，而不需要考虑主动地将信息传送到客户端，为此，Enlace 提供了 `NormalEndpoint`, `NormalEndpoint` 的定义如下:
-
-```typescript
-abstract class HttpEndpoint extends NormalEndpoint {
-  abstract receive(input: HttpEndpointInput): any | Promise<any>;
-}
-```
-
-2. **WebSocket**: 与 Http 不同，这是一个 `全双工` 的网络协议，需要处理主动像客户端推送信息的情况，为此，Enlace 提供了 `KeepAliveEndpint`, `KeepAliveEndpoint` 的定义如下:
-
-```typescript
-export abstract class KeepAliveEndpoint extends ClassEndpoint {
-  clients: Client[];
-  abstract receive(input: GenericEndpointInput): void;
-  broadcast(message: unknown, clients: Client[]): void;
-  sendMessageToClient(message: unknown, client: Client): void;
-}
-```
-
-您可以使用 broadcast 和 sendMessageToClient 方法来对指定客户端主动推送信息。
-
-其中，clients 代表当前连接在改端点上的连接，由实现具体网络协议的 adaptor 来维护，您只需要直接使用就好。
-
-### 单个 Endpoint
-
-Endpoint 的定义是多样的，您可以使用类的方式，也可以使用定义函数的方式。
-
-下面是分别使用两种方式定义 Endpoint 的等效程序。
-
-- **类**:
-
-```typescript
-class SimpleEndpoint extends HttpEndpoint {
-  receive(input: HttpEndpointInput): string {
-    const name = input.query("name");
-    return `Hello ${name}`;
+  /**
+   *  上传文件
+   */
+  upFile(ctx, next) {
+    return async function () {
+      const imgUrl = uploadimg(ctx);
+      if (imgUrl) {
+        return ResultCode.SUCCESS({
+          data: imgUrl,
+          message: "文件上传成功",
+        });
+      } else {
+        return ResultCode.ERRO({
+          data: null,
+          message: "文件上传失败",
+        });
+      }
+    };
   }
 }
+
+module.exports = IndexService;
 ```
 
-- **函数**:
-  > 注意: 目前为止, 函数 Endpoint 并不能支持 KeepAliveEndpint 里的 sendMessageToClient 等方法。(我们已经将该目标添加到待办!)
+# Mapper
+
+### Mapper 层
+
+Mapper 层，完成对数据库的 curd，并返回处理结果，此处简单封装了直接 sql 查询的注解，使用自定义占位符 :yourKey 形式，正则切割自动匹配传入对象的 key+value，具体自己去体验吧
 
 ```typescript
-function(input: HttpEndpointInput): string {
-  const name = input.query("name");
-  return `functional endpoint name: ${name}`;
-};
+/**
+ * Greated By xuanhei on 2020/9/6
+ **/
+
+const {
+  Mapper,
+  Insert,
+  Delete,
+  Update,
+  Select,
+} = require("../Annotation/MapperAnnotion");
+
+@Mapper
+class IndexMapper {
+  /**
+   *  增加数据
+   */
+  @Insert("insert into test set name=:name,age=:age")
+  addTest(obj) {}
+
+  /**
+   *  删除数据
+   */
+  @Delete("DELETE FROM test WHERE id=:id")
+  deleteTest(id) {}
+
+  /**
+   *  删除数据
+   */
+  @Update("UPDATE test SET name=:name,age=:age WHERE id=:id")
+  updateTest(data) {}
+
+  /**
+   *  查询多条数据
+   */
+  @Select("select * from test where id=:id", 1) //0为默认返回数组 1为返回对象，默认可以不传
+  selectOneTest(id) {}
+
+  /**
+   *  查询多条数据
+   */
+  @Select("select * from test")
+  selectTest() {}
+}
+module.exports = IndexMapper;
 ```
 
-### 一组 Endpoint --- `Controller`
+# Pojo
 
-总有些 Endpoint 之间会有些共同点，比如一组 Endpoint 用于支撑用户系统，一组 Endpoint 用于支撑支付系统。
-
-因此，Enlace 提供了定义一组 Endpoint 的方式 --- `Controller`。
-
-使用 `Controller` 需要使用 Typescript 的注解，示例如下:
+### 实体层，校验器以及数据库字段匹配和装配可在此层完成（暂未实现）
 
 ```typescript
-// TureFunction 是永远返回 True 的函数，此处说明该 Controller 接受来自所有 adaptor 的请求
-// expectedPath 配置了该 Controller 所期望的请求路径，只有遵循 expectedPath 的请求才会进入该 Controller
-@ControllerMapping({ expectedPath: "/", selectAdaptor: TrueFunction })
-class HelloController {
-  // 此处的 expectedPath 是基于 Controller 的 expectedPath 之上的，简单来说，这是相对路径而不是绝对路径
-  // 对于 selectAdaptor， 只有当请求通过了 Controller 的 selectAdaptor，才会尝试通过 Controller 里标注了 Endpoint 的方法上的 selectAdaptor
-  @Endpint({ expectedPath: "/hello", selectAdaptor: TrueFunction })
-  hello(): string {
-    return "Hello World";
-  }
+//类似
+
+@Init
+class Test {
+  id = 0;
+  name = "";
+  age = 0;
 }
 ```
 
-### 使用 Endpoint
+# Utils
 
-单个 Endpoint 与 Controller 的使用完全相同，示例如下:
+### 工具层，目前只有统一返回状态以及上传文件工具
 
 ```typescript
-// 类定义，使用构造器
-adaptor.router.useEndpointOn("/", SimpleEndpoint);
-// 类定义，使用实例
-adaptor.router.useEndpointOn("/", new SimpleEndpoint());
-// 函数式定义
-adaptor.router.useEndpointOn("/", FunctionEndpoint);
-// 使用 Controller
-adaptor.router.useEndpointOn("/", new HelloController());
+//工具类
+const path = require("path");
+const fs = require("fs");
+function uploadimg(ctx, next) {
+  console.log(JSON.stringify(ctx.request, null, " "));
+  const fileName = ctx.request.files["file"]["name"];
+  const file = ctx.request.files["file"];
+  // 创建可读流
+  const render = fs.createReadStream(file.path);
+  let filePath = `${path.resolve(
+    __dirname,
+    "../FileStatic/images"
+  )}/${fileName}`;
+  const fileDir = path.join(__dirname, "../FileStatic/images");
+  if (!fs.existsSync(fileDir)) {
+    fs.mkdirSync(fileDir, (err) => {
+      console.log(err);
+      console.log("创建失败");
+    });
+  }
+  // 创建写入流
+  const upStream = fs.createWriteStream(filePath);
+  render.pipe(upStream);
+  return filePath;
+}
+
+module.exports = uploadimg;
+```
+
+```typescript
+//返回类
+module.exports = new (class ResultCode {
+  SUCCESS({ code = 200, message = "操作成功", data = "", state = true }) {
+    const Result = { code, message, data, state };
+    const response = {};
+    Object.keys(Result).forEach((key) => {
+      if (Result[key]) response[key] = Result[key];
+    });
+    return response;
+  }
+  ERRO({ code = 500, message = "操作失败", state = false }) {
+    const Result = { code, message, state };
+    const response = {};
+    Object.keys(Result).forEach((key) => {
+      if (Result[key]) response[key] = Result[key];
+    });
+    return response;
+  }
+})();
+```
+
+# KoaBootApplication
+
+### 启动入口
+
+不需要说了吧
+
+```typescript
+
 ```
 
 # 构建指南
@@ -385,8 +503,8 @@ comming soon...
 
 # Maintainers
 
-[@jctaoo](https://github.com/jctaoo).
+[@coder 猪](https://gitee.com/JSshuai2015).
 
 # License
 
-[MIT](LICENSE) © 2pown
+[Apache-2.0](LICENSE) © coderPig
