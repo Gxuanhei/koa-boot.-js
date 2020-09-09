@@ -499,7 +499,7 @@ module.exports = new (class ResultCode {
 
 # 构建指南
 
-comming soon...
+git clone to your PC...
 
 # Maintainers
 
