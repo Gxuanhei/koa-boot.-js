@@ -10,7 +10,7 @@
       <img src="https://github.com/2pown/enlace/workflows/run%20lib%20test/badge.svg" alt="GitHub Actions">
     </a>
     <a href="https://www.typescriptlang.org/">
-      <img src="https://img.shields.io/badge/TypeScript-%F0%9F%92%AA-blue" alt="JavaScript">
+      <img src="https://img.shields.io/badge/JavaScript-%F0%9F%92%AA-blue" alt="JavaScript">
     </a>
     <a href="https://github.com/2pown/enlace/blob/develop/LICENSE">
       <img src="https://img.shields.io/badge/license-Apache2.0-red.svg" alt="Licence-Apache-2.0">
