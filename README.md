@@ -20,31 +20,94 @@
 
 # TODO:
 
-- [ ] 完成 CLI
-- [ ] 完善 Http 与 WebSocket 的装饰器
-- [ ] 完善函数式开发体验
-- [ ] 自动扫描 Endpoint 与 Controller
-- [ ] 完善 Vuepress 文档
-- [ ] 编写单元测试
+- [ ] 完成 基本层次的模仿与实现
+- [ ] 完善 Http 与 mysql 的装饰器
+- [ ] 完善面向对象编程开发体验
+- [ ] 自动扫描 Controller 导入路由
+- [ ] 完成 上传文件测试版本
+- [ ] 其他...
 
 # Features:
 
-- **面向接口**: 轻易地扩展任何组件、降低应用程序的耦合度、让维护与调试变得简单...
-- **为通信工作而不是 HTTP**: 可以是 Http,RPC,甚至可以是任何自定义的通信,而不像其他框架一样以 Http 为中心
-- **基于 Deno 和 Typescript**: 基于 Deno 运行时与强大的 Typescript 语言,我们计划在未来将 Enlace 带到更多平台上
+- **面向注解与面向对象**: 层次更加的清晰以及编写服务端代码的阅读性更高
+- **让 nodejs 平台上开发服务端更加规范化（虽然有 nest.js）**: 对新手上手服务端开发以及不懂 typescript 的前端 coder 更加友好
 
 # Simple Usage:
 
 simple.ts
 
-```typescript
-@MainApplication
-class DemoApplication extends Application {
-  @AddAdaptor(HttpAdaptor)
-  onAddHttpAdaptor(router: Router) {
-    router.useEndpointOn("/", () => "HelloWorld");
-  }
+```JavaScript
+ **/
+
+const {Api,Controller,PostMapping,GetMapping,DeleteMapping,PutMapping,FilePostMapping} = require('../Annotation/HttpAnnotion');
+const IndexService = require("../Service/IndexService");
+const {Init,Autowired} = require("../Annotation/InitAnnontion")
+const ResultCode = require('../Utils/ResultCode');
+/**
+ * 首页api
+ */
+@Api("/Article")
+@Controller
+@Init //增加这个注解给方法修改
+class IndexController{
+    //自动实例化
+    @Autowired(IndexService)
+    indexService;
+    /**
+     *  增加文章
+     */
+    @PostMapping("/addArticle")
+    addArticle(data,next){
+        return this.indexService.addTest(data);
+    }
+
+    /**
+     *  删除文章
+     */
+    @DeleteMapping("/deleteArticle")
+    deleteArticle(data){
+        return ResultCode.SUCCESS({
+            data:this.indexService.deleteTest(data)
+        });
+    }
+
+    @PutMapping("/updateArticle")
+    updateArticle(data,next){
+        return ResultCode.SUCCESS({
+            data:this.indexService.updateArticle(data),
+            message:"删除成功"
+        });
+    }
+
+    /**
+     *  查询单篇文章
+     */
+    @GetMapping("/selectOneTest")
+    selectOneTest(data,next){
+        return ResultCode.SUCCESS({
+            data:this.indexService.selectOneTest(data)
+        });
+    }
+
+    /**
+     *  查询多篇文章
+     */
+    @GetMapping("/selectArticle")
+    selectArticle({aa = "",bb = ""},next){
+        return ResultCode.SUCCESS({
+            data:this.indexService.selectTest()
+        });
+    }
+
+    /**
+     *  上传文件
+     */
+    @FilePostMapping("/upFile")
+    upFile(ctx,next){
+        return this.indexService.upFile(ctx,next);
+    }
 }
+
 ```
 
 run
