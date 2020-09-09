@@ -36,7 +36,7 @@
 
 simple.ts
 
-```JavaScript
+```typescript
  **/
 
 const {Api,Controller,PostMapping,GetMapping,DeleteMapping,PutMapping,FilePostMapping} = require('../Annotation/HttpAnnotion');
