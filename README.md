@@ -41,6 +41,9 @@ Simple.js
 
 ```typescript
  **/
+/**
+ * Greated By xuanhei on 2020/9/4
+ **/
 
 const {Api,Controller,PostMapping,GetMapping,DeleteMapping,PutMapping,FilePostMapping} = require('../Annotation/HttpAnnotion');
 const IndexService = require("../Service/IndexService");
@@ -69,17 +72,12 @@ class IndexController{
      */
     @DeleteMapping("/deleteArticle")
     deleteArticle(data){
-        return ResultCode.SUCCESS({
-            data:this.indexService.deleteTest(data)
-        });
+        return this.indexService.deleteTest(data);
     }
 
     @PutMapping("/updateArticle")
     updateArticle(data,next){
-        return ResultCode.SUCCESS({
-            data:this.indexService.updateArticle(data),
-            message:"删除成功"
-        });
+        return this.indexService.updateArticle(data)
     }
 
     /**
@@ -87,19 +85,15 @@ class IndexController{
      */
     @GetMapping("/selectOneTest")
     selectOneTest(data,next){
-        return ResultCode.SUCCESS({
-            data:this.indexService.selectOneTest(data)
-        });
+        return this.indexService.selectOneTest(data)
     }
 
     /**
      *  查询多篇文章
      */
     @GetMapping("/selectArticle")
-    selectArticle({aa = "",bb = ""},next){
-        return ResultCode.SUCCESS({
-            data:this.indexService.selectTest()
-        });
+    selectArticle(data,next){
+        return this.indexService.selectTest(data)
     }
 
     /**
@@ -168,6 +162,10 @@ module.exports = config;
 控制器层，相应用户请求：决定使用什么视图，需要准备什么数据来显示，示例代码:
 
 ```typescript
+/**
+ * Greated By xuanhei on 2020/9/4
+ **/
+
 const {
   Api,
   Controller,
@@ -203,17 +201,12 @@ class IndexController {
    */
   @DeleteMapping("/deleteArticle")
   deleteArticle(data) {
-    return ResultCode.SUCCESS({
-      data: this.indexService.deleteTest(data),
-    });
+    return this.indexService.deleteTest(data);
   }
 
   @PutMapping("/updateArticle")
   updateArticle(data, next) {
-    return ResultCode.SUCCESS({
-      data: this.indexService.updateArticle(data),
-      message: "删除成功",
-    });
+    return this.indexService.updateArticle(data);
   }
 
   /**
@@ -221,19 +214,15 @@ class IndexController {
    */
   @GetMapping("/selectOneTest")
   selectOneTest(data, next) {
-    return ResultCode.SUCCESS({
-      data: this.indexService.selectOneTest(data),
-    });
+    return this.indexService.selectOneTest(data);
   }
 
   /**
    *  查询多篇文章
    */
   @GetMapping("/selectArticle")
-  selectArticle({ aa = "", bb = "" }, next) {
-    return ResultCode.SUCCESS({
-      data: this.indexService.selectTest(),
-    });
+  selectArticle(data, next) {
+    return this.indexService.selectTest(data);
   }
 
   /**
@@ -318,11 +307,11 @@ class IndexService {
       }
       if (SQLDATA && SQLDATA === 1) {
         return ResultCode.SUCCESS({
-          message: "删除成功",
+          message: "更改成功",
         });
       }
       return ResultCode.SUCCESS({
-        message: "删除失败",
+        message: "更改失败",
       });
     };
   }
@@ -331,14 +320,26 @@ class IndexService {
    *  查询单条数据
    */
   selectOneTest(id) {
-    return this.indexMapper.selectOneTest(id);
+    const that = this;
+    return async function () {
+      return ResultCode.SUCCESS({
+        data: that.indexMapper.selectOneTest(id),
+        message: "查询成功",
+      });
+    };
   }
 
   /**
    *  查询多条数据
    */
   selectTest() {
-    return this.indexMapper.selectTest();
+    const that = this;
+    return async function () {
+      return ResultCode.SUCCESS({
+        data: that.indexMapper.selectTest(),
+        message: "查询成功",
+      });
+    };
   }
 
   /**

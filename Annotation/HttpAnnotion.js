@@ -19,9 +19,9 @@ const Router = require('koa-router')();
 
 function Controller(target) {
     console.log('注入控制器...');
-    return class extends target {
-        Router = Router;
-    }
+    // return class extends target {
+    //     Router = Router;
+    // }
 }
 
 function GetMapping(url) {
@@ -29,7 +29,7 @@ function GetMapping(url) {
     return function (target,key) {
         Router.get(ApiAddress+url,  async (ctx, next) => {
             //写入body
-            const data = target[key](ctx.request.query || ctx.query, next);
+            const data = await target[key](ctx.request.query || ctx.query, next)();
             console.log(data)
             ctx.response.body = {
                 ...data,
@@ -58,7 +58,7 @@ function DeleteMapping(url) {
     return function (target,key) {
         Router.delete(ApiAddress+url,  async (ctx, next) => {
             //写入body
-            const data = target[key](ctx.request.query || ctx.query, next);
+            const data = await target[key](ctx.request.query || ctx.query, next)();
             ctx.response.body = {
                 ...data,
                 data:await data['data']
@@ -72,7 +72,7 @@ function PutMapping(url) {
         Router.put(ApiAddress+url, async (ctx, next) => {
             //写入body
             console.log(ctx.request.body)
-            const data = target[key](ctx.request.body, next);
+            const data = await target[key](ctx.request.body, next)();
             ctx.response.body = {
                 ...data,
                 data:await data['data']
