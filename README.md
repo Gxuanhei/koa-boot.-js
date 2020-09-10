@@ -37,7 +37,7 @@
 
 # Simple Usage:
 
-simple.ts
+Simple.js
 
 ```typescript
  **/
