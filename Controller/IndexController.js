@@ -5,7 +5,7 @@
 const {Api,Controller,PostMapping,GetMapping,DeleteMapping,PutMapping,FilePostMapping} = require('../Annotation/HttpAnnotion');
 const IndexService = require("../Service/IndexService");
 const {Init,Autowired} = require("../Annotation/InitAnnontion")
-const ResultCode = require('../Utils/ResultCode');
+
 /**
  * 首页api
  */

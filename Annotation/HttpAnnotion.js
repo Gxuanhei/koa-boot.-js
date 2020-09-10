@@ -29,13 +29,17 @@ function GetMapping(url) {
     console.log('注入路由接口...');
     return function (target,key) {
         Router.get(ApiAddress+url,  async (ctx, next) => {
-            //写入body
-            const data = await target[key](ctx.request.query || ctx.query, next)();
-            console.log(data)
-            ctx.response.body = {
-                ...data,
-                data:await data['data']
-            };
+            let data = null;
+            if(typeof target[key](ctx.request.query || ctx.query, next) === "function"){
+                data = await target[key](ctx.request.query || ctx.query, next)();
+                ctx.response.body = {
+                    ...data,
+                    data:await data['data']
+                };
+            }else {
+                data = target[key](ctx.request.query || ctx.query, next);
+                ctx.response.body = data;
+            }
         });
     }
 }
@@ -45,12 +49,18 @@ function PostMapping(url) {
         Router.post(ApiAddress+url, async (ctx, next) => {
             //写入body
             console.log(ctx.request.body)
-            const data = await target[key](ctx.request.body, next)();
-            console.log(data)
-            ctx.response.body = {
-                ...data,
-                data:await data['data']
-            };
+            let data = null;
+            if(typeof target[key](ctx.request.body, next) === "function"){
+                data = await target[key](ctx.request.body, next)();
+                ctx.response.body = {
+                    ...data,
+                    data:await data['data']
+                };
+            }else {
+                data = target[key](ctx.request.body, next);
+                ctx.response.body = data;
+            }
+
         });
     }
 }
@@ -58,12 +68,18 @@ function DeleteMapping(url) {
     console.log('注入路由接口...');
     return function (target,key) {
         Router.delete(ApiAddress+url,  async (ctx, next) => {
-            //写入body
-            const data = await target[key](ctx.request.query || ctx.query, next)();
-            ctx.response.body = {
-                ...data,
-                data:await data['data']
-            };
+            let data = null;
+            if(typeof target[key](ctx.request.query || ctx.query, next) === "function"){
+                data = await target[key](ctx.request.query || ctx.query, next)();
+                //写入body
+                ctx.response.body = {
+                    ...data,
+                    data:await data['data']
+                };
+            }else {
+                data = target[key](ctx.request.query, next);
+                ctx.response.body = data;
+            }
         });
     }
 }
@@ -72,12 +88,19 @@ function PutMapping(url) {
     return function (target,key) {
         Router.put(ApiAddress+url, async (ctx, next) => {
             //写入body
+            let data;
+            if(typeof target[key](ctx.request.body, next) === "function"){
+               data = await target[key](ctx.request.body, next)();
+                //写入body
+                ctx.response.body = {
+                    ...data,
+                    data:await data['data']
+                };
+            }else {
+                data = target[key](ctx.request.query, next);
+                ctx.response.body = data;
+            }
             console.log(ctx.request.body)
-            const data = await target[key](ctx.request.body, next)();
-            ctx.response.body = {
-                ...data,
-                data:await data['data']
-            };
         });
     }
 }
