@@ -65,11 +65,11 @@ class IndexService{
             }
             if(SQLDATA&&SQLDATA===1){
                 return ResultCode.SUCCESS({
-                    message:"删除成功"
+                    message:"更改成功"
                 });
             }
             return ResultCode.SUCCESS({
-                message:"删除失败"
+                message:"更改失败"
             });
         }
     }
@@ -78,14 +78,26 @@ class IndexService{
      *  查询单条数据
      */
     selectOneTest(id){
-        return this.indexMapper.selectOneTest(id);
+        const that = this;
+        return async function () {
+            return ResultCode.SUCCESS({
+                data:that.indexMapper.selectOneTest(id),
+                message:"查询成功"
+            });
+        }
     }
 
     /**
      *  查询多条数据
      */
     selectTest(){
-        return this.indexMapper.selectTest();
+        const that = this;
+        return async function () {
+                return ResultCode.SUCCESS({
+                    data:that.indexMapper.selectTest(),
+                    message:"查询成功"
+                });
+        }
     }
 
     /**

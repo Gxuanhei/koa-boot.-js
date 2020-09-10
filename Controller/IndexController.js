@@ -29,17 +29,12 @@ class IndexController{
      */
     @DeleteMapping("/deleteArticle")
     deleteArticle(data){
-        return ResultCode.SUCCESS({
-            data:this.indexService.deleteTest(data)
-        });
+        return this.indexService.deleteTest(data);
     }
 
     @PutMapping("/updateArticle")
     updateArticle(data,next){
-        return ResultCode.SUCCESS({
-            data:this.indexService.updateArticle(data),
-            message:"删除成功"
-        });
+        return this.indexService.updateArticle(data)
     }
 
     /**
@@ -47,19 +42,15 @@ class IndexController{
      */
     @GetMapping("/selectOneTest")
     selectOneTest(data,next){
-        return ResultCode.SUCCESS({
-            data:this.indexService.selectOneTest(data)
-        });
+        return this.indexService.selectOneTest(data)
     }
 
     /**
      *  查询多篇文章
      */
     @GetMapping("/selectArticle")
-    selectArticle({aa = "",bb = ""},next){
-        return ResultCode.SUCCESS({
-            data:this.indexService.selectTest()
-        });
+    selectArticle(data,next){
+        return this.indexService.selectTest(data)
     }
 
     /**
