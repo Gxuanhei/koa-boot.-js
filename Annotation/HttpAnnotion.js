@@ -32,6 +32,14 @@ function GetMapping(url) {
             let data = null;
             if(typeof target[key](ctx.request.query || ctx.query, next) === "function"){
                 data = await target[key](ctx.request.query || ctx.query, next)();
+                if(typeof data === "string"){
+                    ctx.response.body = data;
+                    return "ok";
+                }
+                if(Array.isArray(data)){
+                    ctx.response.body = data;
+                    return "ok";
+                }
                 ctx.response.body = {
                     ...data,
                     data:await data['data']
@@ -52,6 +60,14 @@ function PostMapping(url) {
             let data = null;
             if(typeof target[key](ctx.request.body, next) === "function"){
                 data = await target[key](ctx.request.body, next)();
+                if(typeof data === "string"){
+                    ctx.response.body = data;
+                    return "ok";
+                }
+                if(Array.isArray(data)){
+                    ctx.response.body = data;
+                    return "ok";
+                }
                 ctx.response.body = {
                     ...data,
                     data:await data['data']
@@ -71,6 +87,14 @@ function DeleteMapping(url) {
             let data = null;
             if(typeof target[key](ctx.request.query || ctx.query, next) === "function"){
                 data = await target[key](ctx.request.query || ctx.query, next)();
+                if(typeof data === "string"){
+                    ctx.response.body = data;
+                    return "ok";
+                }
+                if(Array.isArray(data)){
+                    ctx.response.body = data;
+                    return "ok";
+                }
                 //写入body
                 ctx.response.body = {
                     ...data,
@@ -91,6 +115,14 @@ function PutMapping(url) {
             let data;
             if(typeof target[key](ctx.request.body, next) === "function"){
                data = await target[key](ctx.request.body, next)();
+                if(typeof data === "string"){
+                    ctx.response.body = data;
+                    return "ok";
+                }
+                if(Array.isArray(data)){
+                    ctx.response.body = data;
+                    return "ok";
+                }
                 //写入body
                 ctx.response.body = {
                     ...data,

@@ -15,7 +15,9 @@ class IndexController{
 
     @GetMapping("/index")
     getIndex(){
-        return "你好";
+        return function () {
+            return "啥"
+        };
     }
 
 }
