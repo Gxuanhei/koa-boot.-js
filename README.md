@@ -112,6 +112,7 @@ run
 ```bash
 git clone https://gitee.com/JSshuai2015/koa-boot.-js
 cd koa-boot.-js
+npm install
 npm run dev
 ```
 
