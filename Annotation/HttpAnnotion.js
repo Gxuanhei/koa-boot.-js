@@ -6,8 +6,8 @@
  * 注入注解
  * @type {*|module:koa-router|Router|undefined}
  */
+const Router = require('koa-router')();
 let ApiAddress = "";
-
 function Api(url = "") {
     ApiAddress = url;
     return function () {
@@ -15,8 +15,6 @@ function Api(url = "") {
         //修改
     }
 }
-
-const Router = require('koa-router')();
 
 function Controller(target) {
     console.log('注入控制器...');

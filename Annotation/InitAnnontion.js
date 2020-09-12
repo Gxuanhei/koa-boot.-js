@@ -1,20 +1,24 @@
 /**
- * Greated By xuanhei on 2020/9/6
+ * Greated By xuanhei on 2020/9/12
  **/
-const initList = []
-function Init(target,key) {
-    initList.forEach((item,index)=>{
-        target.prototype[item.key] = item.change;
-    })
+const List = [];
+// const path =
+function Init(Model) {
+    // List.forEach((item,index)=>{
+    //     let descriptor = Object.getOwnPropertyDescriptor(Model.prototype, item.key);
+    //     Object.defineProperty(Model.prototype,  item.key, {
+    //         ...descriptor,
+    //         value: item.change,
+    //         writable: false
+    //     })
+    // })
 
 }
+
 // 将类实例化
-function Autowired(bean) {
+function Autowired(args,keys) {
     return function (target,key) {
-        initList.push({
-            key,
-            change: new bean()
-        })
+        target[key] = args.prototype;
     }
 }
 

@@ -5,16 +5,16 @@
 
 const IndexMapper = require("../Mapper/IndexMapper")
 const ResultCode = require('../Utils/ResultCode');
-const {Init,Autowired} = require("../Annotation/InitAnnontion")
+const {Autowired} = require("../Annotation/InitAnnontion")
 const {Service} = require("../Annotation/ServiceAnnontion")
 const uploadimg = require("../Utils/FileUtil")
-const {autobind} = require("core-decorators")
 @Service
 // @Init //增加这个注解给方法修改
 class IndexService{
 
-    // @Autowired("../Mapper/IndexMapper")
-    indexMapper = new IndexMapper();
+    //类实例化
+    @Autowired(IndexMapper)
+    indexMapper;
 
     addTest(data){
         const that = this;
@@ -79,6 +79,7 @@ class IndexService{
      */
     selectOneTest(id){
         const that = this;
+        console.log(this.indexMapper);
         return async function () {
             return ResultCode.SUCCESS({
                 data:that.indexMapper.selectOneTest(id),
