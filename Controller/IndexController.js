@@ -47,6 +47,7 @@ class IndexController{
         return this.indexService.selectOneTest(data)
     }
 
+
     /**
      *  查询多篇文章
      */

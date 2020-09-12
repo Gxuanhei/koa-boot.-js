@@ -25,7 +25,9 @@ function Controller(target) {
 
 function GetMapping(url) {
     console.log('注入路由接口...');
+    console.log('注入路由接口...');
     return function (target,key) {
+
         Router.get(ApiAddress+url,  async (ctx, next) => {
             let data = null;
             if(typeof target[key](ctx.request.query || ctx.query, next) === "function"){

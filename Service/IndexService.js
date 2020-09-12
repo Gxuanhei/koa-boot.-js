@@ -35,6 +35,7 @@ class IndexService{
             });
         }
     }
+    
     deleteTest(id){
         const that = this;
         return async function () {
