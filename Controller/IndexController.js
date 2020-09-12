@@ -4,18 +4,20 @@
 
 const {Api,Controller,PostMapping,GetMapping,DeleteMapping,PutMapping,FilePostMapping} = require('../Annotation/HttpAnnotion');
 const IndexService = require("../Service/IndexService");
-const {Init,Autowired} = require("../Annotation/InitAnnontion")
+const {Init,Autowired,Test} = require("../Annotation/InitAnnontion")
 
 /**
  * 首页api
  */
 @Api("/Article")
 @Controller
-@Init //增加这个注解给方法修改
+// @Init //增加这个注解给方法修改
 class IndexController{
+
     //自动实例化
     @Autowired(IndexService)
     indexService;
+
     /**
      *  增加文章
      */
@@ -44,6 +46,7 @@ class IndexController{
     selectOneTest(data,next){
         return this.indexService.selectOneTest(data)
     }
+
 
     /**
      *  查询多篇文章

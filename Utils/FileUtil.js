@@ -1,6 +1,6 @@
 const path = require('path');
 const fs = require('fs');
-
+const {FilePath} = require("../Config/application")
 
 function uploadimg(ctx,next) {
     console.log(JSON.stringify(ctx.request, null, ' '));
@@ -8,7 +8,7 @@ function uploadimg(ctx,next) {
     const file = ctx.request.files["file"];
     // 创建可读流
     const render = fs.createReadStream(file.path);
-    let filePath = `${path.resolve(__dirname, '../FileStatic/images')}/${fileName}`;
+    let filePath = FilePath.writePath+fileName;
     const fileDir = path.join(__dirname, '../FileStatic/images');
     if (!fs.existsSync(fileDir)) {
         fs.mkdirSync(fileDir, err => {

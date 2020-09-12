@@ -15,8 +15,9 @@ app.use(async(ctx, next) => {
     console.log(`${ctx.request.method} ${ctx.request.url}`); // 打印URL
     await next(); // 调用下一个middleware
 });
+// require("./Test/index");
 
-
-// 在端口3000监听:
-app.listen(3000);
-console.log('app started at port 3000...');
+// 端口监听:
+const {server} = require("./Config/application");
+app.listen(server.port);
+console.log(`app started at port ${server.port}...`);

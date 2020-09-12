@@ -8,7 +8,7 @@ function Init(Model) {
     //     let descriptor = Object.getOwnPropertyDescriptor(Model.prototype, item.key);
     //     Object.defineProperty(Model.prototype,  item.key, {
     //         ...descriptor,
-    //         value: item.change,
+    //         value: new item.change(),
     //         writable: false
     //     })
     // })
@@ -18,11 +18,15 @@ function Init(Model) {
 // 将类实例化
 function Autowired(args,keys) {
     return function (target,key) {
+        // List.push({
+        //     key:key,
+        //     change: args
+        // });
         target[key] = args.prototype;
     }
 }
 
 module.exports = {
-    Init,
-    Autowired
+  Init,
+  Autowired
 };

@@ -6,8 +6,8 @@
  * 注入注解
  * @type {*|module:koa-router|Router|undefined}
  */
+const Router = require('koa-router')();
 let ApiAddress = "";
-
 function Api(url = "") {
     ApiAddress = url;
     return function () {
@@ -15,8 +15,6 @@ function Api(url = "") {
         //修改
     }
 }
-
-const Router = require('koa-router')();
 
 function Controller(target) {
     console.log('注入控制器...');
@@ -27,11 +25,21 @@ function Controller(target) {
 
 function GetMapping(url) {
     console.log('注入路由接口...');
+    console.log('注入路由接口...');
     return function (target,key) {
+
         Router.get(ApiAddress+url,  async (ctx, next) => {
             let data = null;
             if(typeof target[key](ctx.request.query || ctx.query, next) === "function"){
                 data = await target[key](ctx.request.query || ctx.query, next)();
+                if(typeof data === "string"){
+                    ctx.response.body = data;
+                    return "ok";
+                }
+                if(Array.isArray(data)){
+                    ctx.response.body = data;
+                    return "ok";
+                }
                 ctx.response.body = {
                     ...data,
                     data:await data['data']
@@ -52,6 +60,14 @@ function PostMapping(url) {
             let data = null;
             if(typeof target[key](ctx.request.body, next) === "function"){
                 data = await target[key](ctx.request.body, next)();
+                if(typeof data === "string"){
+                    ctx.response.body = data;
+                    return "ok";
+                }
+                if(Array.isArray(data)){
+                    ctx.response.body = data;
+                    return "ok";
+                }
                 ctx.response.body = {
                     ...data,
                     data:await data['data']
@@ -71,6 +87,14 @@ function DeleteMapping(url) {
             let data = null;
             if(typeof target[key](ctx.request.query || ctx.query, next) === "function"){
                 data = await target[key](ctx.request.query || ctx.query, next)();
+                if(typeof data === "string"){
+                    ctx.response.body = data;
+                    return "ok";
+                }
+                if(Array.isArray(data)){
+                    ctx.response.body = data;
+                    return "ok";
+                }
                 //写入body
                 ctx.response.body = {
                     ...data,
@@ -91,6 +115,14 @@ function PutMapping(url) {
             let data;
             if(typeof target[key](ctx.request.body, next) === "function"){
                data = await target[key](ctx.request.body, next)();
+                if(typeof data === "string"){
+                    ctx.response.body = data;
+                    return "ok";
+                }
+                if(Array.isArray(data)){
+                    ctx.response.body = data;
+                    return "ok";
+                }
                 //写入body
                 ctx.response.body = {
                     ...data,

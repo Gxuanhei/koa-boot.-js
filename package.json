@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "node KoaBootApplication.js --mode=development",
     "test": "node KoaBootApplication.js --mode=test",
-    "pro": "node KoaBootApplication.js --mode=production"
+    "pro": "node KoaBootApplication.js --mode=production",
+    "testTest": "node ./Test/index.js --mode=production"
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",
