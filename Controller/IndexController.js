@@ -11,8 +11,7 @@ const {Init,Autowired,Test} = require("../Annotation/InitAnnontion")
  */
 @Api("/Article")
 @Controller
-// @Scope(value="prototype;singleType",scopeName = "string")
-// @Init //增加这个注解给方法修改
+
 class IndexController{
 
     //自动实例化
