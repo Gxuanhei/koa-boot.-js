@@ -11,7 +11,7 @@ const {Api,Controller,PostMapping,GetMapping,DeleteMapping,PutMapping,FilePostMa
  */
 @Api("/News")
 @Controller
-class IndexController{
+class NewsController{
 
     @GetMapping("/index")
     getIndex(){

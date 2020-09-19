@@ -6,6 +6,9 @@
  * 注入注解
  * @type {*|module:koa-router|Router|undefined}
  */
+
+let IOC = require("../lib/KoaIOC")
+
 const Router = require('koa-router')();
 let ApiAddress = "";
 function Api(url = "") {
@@ -18,9 +21,7 @@ function Api(url = "") {
 
 function Controller(target) {
     console.log('注入控制器...');
-    // return class extends target {
-    //     Router = Router;
-    // }
+
 }
 
 function GetMapping(url) {
@@ -105,6 +106,7 @@ function DeleteMapping(url) {
                 ctx.response.body = data;
             }
         });
+
     }
 }
 function PutMapping(url) {

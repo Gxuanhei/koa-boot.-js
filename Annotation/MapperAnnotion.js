@@ -77,6 +77,8 @@ function Select(sql,type = 0) {
     }
 }
 
+
+
 module.exports = {
     Mapper,
     Insert,

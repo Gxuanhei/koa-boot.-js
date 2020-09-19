@@ -20,5 +20,7 @@ module.exports = {
     FilePath:{
         writePath:`${path.resolve(__dirname, '../FileStatic/images')}/`,
         outPutPath:""
-    }
+    },
+    //静态资源路径
+    staticPath:path.resolve(__dirname, '../FileStatic/')
 };

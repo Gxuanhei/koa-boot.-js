@@ -20,4 +20,6 @@ app.use(async(ctx, next) => {
 // 端口监听:
 const {server} = require("./Config/application");
 app.listen(server.port);
+const mm = require("./lib/KoaIOC");
+console.log(mm);
 console.log(`app started at port ${server.port}...`);

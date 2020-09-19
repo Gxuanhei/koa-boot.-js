@@ -2,6 +2,7 @@
  * Greated By xuanhei on 2020/9/12
  **/
 const List = [];
+const IOC = require("../lib/KoaIOC")
 // const path =
 function Init(Model) {
     // List.forEach((item,index)=>{
@@ -18,10 +19,11 @@ function Init(Model) {
 // 将类实例化
 function Autowired(args,keys) {
     return function (target,key) {
-        target[key] = args.prototype;
+        let iocKey = args.toString().match(/function\s*([^(]*)\(/)[1];
+        IOC.Push(iocKey,args.prototype);
+        target[key] = IOC.getObj(key);
     }
 }
-
 module.exports = {
     Init,
     Autowired
